@@ -1,19 +1,9 @@
-# Quantumult X native rewrite for Maasea/sgmodule YouTube script.
-# Import this file directly as a QX snippet, or copy each section into your config.
-# Do not run this file through a Surge module parser.
-#
-# If you already have "udp_drop_list" in [general], merge QUIC into the existing value
-# instead of overwriting your current list.
+; Quantumult X rewrite remote resource for YouTube.
+; Import as a QX rewrite resource. Do not run this file through a Surge parser.
+; IMPORTANT: add `udp_drop_list = QUIC` to the main profile [general] manually.
+; If [general] already has udp_drop_list, merge QUIC into the existing value.
 
-[general]
-udp_drop_list = QUIC
-
-[rewrite_local]
-# YouTube / YouTube Music protobuf responses
-^https:\/\/youtubei(?:-att)?\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch)(\?(.*))?$ url script-response-body https://raw.githubusercontent.com/bensontech1014/Quantumult-X-script/master/Script/Youtube/youtube.response.js
-
-# Empty 200 response for initplayback ad bootstrap
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad url reject-200
-
-[mitm]
 hostname = *.googlevideo.com, youtubei.googleapis.com, youtubei-att.googleapis.com
+
+^https:\/\/youtubei(?:-att)?\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch)(\?(.*))?$ url script-response-body https://raw.githubusercontent.com/bensontech1014/Quantumult-X-script/main/Script/Youtube/youtube.response.js
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad url reject-200
