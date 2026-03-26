@@ -1,0 +1,8 @@
+; Quantumult X Fast rewrite remote resource for YouTube.
+; Optimized for direct YouTube usage with lower startup overhead.
+; Keeps: ad removal, background play, picture-in-picture.
+; IMPORTANT: add `udp_drop_list = 443` to the main profile [general] manually.
+
+hostname = youtubei.googleapis.com, youtubei-att.googleapis.com
+
+^https:\/\/youtubei(?:-att)?\.googleapis\.com\/youtubei\/v1\/(browse|next|player|get_watch)(\?(.*))?$ url script-response-body https://raw.githubusercontent.com/bensontech1014/Quantumult-X-script/main/Script/Youtube/youtube.response.fast.js
