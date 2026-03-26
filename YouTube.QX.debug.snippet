@@ -1,8 +1,0 @@
-; Quantumult X debug rewrite remote resource for YouTube.
-; Use this only for troubleshooting. It enables verbose logs in the script.
-; IMPORTANT: add `udp_drop_list = QUIC` to the main profile [general] manually.
-
-hostname = *.googlevideo.com, youtubei.googleapis.com, youtubei-att.googleapis.com
-
-^https:\/\/youtubei(?:-att)?\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch)(\?(.*))?$ url script-response-body https://raw.githubusercontent.com/bensontech1014/Quantumult-X-script/main/Script/Youtube/youtube.response.debug.js
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad url reject-200
