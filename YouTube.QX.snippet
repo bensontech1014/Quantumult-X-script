@@ -10,7 +10,7 @@ udp_drop_list = QUIC
 
 [rewrite_local]
 # YouTube / YouTube Music protobuf responses
-^https:\/\/youtubei(?:-att)?\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch)(\?(.*))?$ url script-response-body https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js
+^https:\/\/youtubei(?:-att)?\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch)(\?(.*))?$ url script-response-body https://raw.githubusercontent.com/bensontech1014/Quantumult-X-script/master/Script/Youtube/youtube.response.js
 
 # Empty 200 response for initplayback ad bootstrap
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad url reject-200
