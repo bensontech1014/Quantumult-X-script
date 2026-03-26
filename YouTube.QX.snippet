@@ -1,7 +1,7 @@
 ; Quantumult X rewrite remote resource for YouTube.
 ; Import as a QX rewrite resource. Do not run this file through a Surge parser.
-; IMPORTANT: add `udp_drop_list = QUIC` to the main profile [general] manually.
-; If [general] already has udp_drop_list, merge QUIC into the existing value.
+; IMPORTANT: add `udp_drop_list = 443` to the main profile [general] manually.
+; If [general] already has udp_drop_list, merge 443 into the existing value.
 
 hostname = *.googlevideo.com, youtubei.googleapis.com, youtubei-att.googleapis.com
 
